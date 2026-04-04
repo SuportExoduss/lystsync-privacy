@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LystSync — Política de Privacidade</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+  :root {
+    --bg:#0A0C10;--bg2:#111520;--bg3:#161B26;--border:#1E2535;
+    --accent:#00BCD4;--text:#E8EDF5;--text2:#8A9BB5;--text3:#4A5568;
+    --green:#27AE60;--red:#C0392B;--yellow:#D4A017;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.75;}
+  header{border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:0;background:rgba(10,12,16,0.92);backdrop-filter:blur(12px);z-index:100;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .logo-mark{width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#000;}
+  .logo-wrap{display:flex;align-items:center;gap:10px;}
+  .logo-name{font-size:15px;font-weight:500;color:var(--text);}
+  .hbadge{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3);}
+  .hero{border-bottom:1px solid var(--border);padding:64px 24px 48px;max-width:760px;margin:0 auto;}
+  .hlabel{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+  .hlabel::before{content:'';display:inline-block;width:20px;height:1px;background:var(--accent);}
+  h1{font-size:36px;font-weight:300;letter-spacing:-.02em;line-height:1.2;margin-bottom:20px;}
+  h1 strong{font-weight:500;color:var(--accent);}
+  .hmeta{display:flex;gap:24px;flex-wrap:wrap;}
+  .mi{display:flex;flex-direction:column;gap:2px;}
+  .ml{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
+  .mv{font-size:13px;color:var(--text2);}
+  .layout{max-width:760px;margin:0 auto;padding:0 24px 80px;}
+  .section{padding:40px 0;border-bottom:1px solid var(--border);}
+  .section:last-child{border-bottom:none;}
+  .sh{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+  .snum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:rgba(0,188,212,.08);border:1px solid rgba(0,188,212,.2);border-radius:4px;padding:3px 8px;white-space:nowrap;margin-top:3px;flex-shrink:0;}
+  .stitle{font-size:18px;font-weight:500;color:var(--text);letter-spacing:-.01em;}
+  p{color:var(--text2);margin-bottom:14px;font-weight:300;}
+  p:last-child{margin-bottom:0;}
+  .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
+  @media(max-width:560px){.dgrid{grid-template-columns:1fr;}}
+  .dcard{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;}
+  .dclabel{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+  .dctitle{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px;}
+  .dcdesc{font-size:12px;color:var(--text2);font-weight:300;line-height:1.5;}
+  .dctag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 8px;border-radius:99px;margin-top:8px;}
+  .tlocal{background:rgba(39,174,96,.12);color:var(--green);border:1px solid rgba(39,174,96,.25);}
+  .tthird{background:rgba(212,160,23,.12);color:var(--yellow);border:1px solid rgba(212,160,23,.25);}
+  .ptable{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+  .ptable th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);padding:10px 14px;border-bottom:1px solid var(--border);font-weight:400;}
+  .ptable td{padding:12px 14px;color:var(--text2);border-bottom:1px solid rgba(30,37,53,.6);font-weight:300;vertical-align:top;}
+  .ptable tr:last-child td{border-bottom:none;}
+  .pill{display:inline-block;font-size:10px;font-family:'IBM Plex Mono',monospace;padding:2px 8px;border-radius:99px;}
+  .pyes{background:rgba(39,174,96,.12);color:var(--green);border:1px solid rgba(39,174,96,.25);}
+  .pno{background:rgba(192,57,43,.12);color:var(--red);border:1px solid rgba(192,57,43,.25);}
+  .plist{list-style:none;display:flex;flex-direction:column;gap:8px;margin:16px 0;}
+  .plist li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--text2);font-weight:300;}
+  .plist li::before{content:'→';color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:12px;flex-shrink:0;margin-top:2px;}
+  .hbox{background:rgba(0,188,212,.05);border:1px solid rgba(0,188,212,.2);border-left:3px solid var(--accent);border-radius:8px;padding:16px 20px;margin:20px 0;}
+  .hbox p{color:var(--text2);margin:0;font-size:14px;}
+  .ccard{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-top:24px;display:flex;flex-direction:column;gap:16px;}
+  .crow{display:flex;gap:12px;align-items:flex-start;}
+  .cicon{width:32px;height:32px;border-radius:8px;background:rgba(0,188,212,.1);border:1px solid rgba(0,188,212,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;}
+  .cilabel{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+  .cival{font-size:14px;color:var(--text);}
+  .cival a{color:var(--accent);text-decoration:none;}
+  footer{border-top:1px solid var(--border);padding:28px 24px;}
+  .fi{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  .fcopy{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3);}
+  .flinks{display:flex;gap:20px;}
+  .flinks a{font-size:12px;color:var(--text3);text-decoration:none;}
+  .flinks a:hover{color:var(--accent);}
+  strong.hl{color:var(--text);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <div class="logo-mark">LS</div>
+    <span class="logo-name">LystSync</span>
+  </div>
+  <span class="hbadge">ExodusTec · v2.0</span>
+</header>
+
+<div class="hero">
+  <div class="hlabel">Documento legal</div>
+  <h1>Política de <strong>Privacidade</strong></h1>
+  <div class="hmeta">
+    <div class="mi"><span class="ml">Versão</span><span class="mv">2.0</span></div>
+    <div class="mi"><span class="ml">Vigência</span><span class="mv">Janeiro de 2025</span></div>
+    <div class="mi"><span class="ml">Desenvolvedor</span><span class="mv">ExodusTec</span></div>
+    <div class="mi"><span class="ml">Aplicativo</span><span class="mv">LystSync — Android</span></div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <div class="section">
+    <div class="sh"><span class="snum">01</span><span class="stitle">Introdução</span></div>
+    <p>O <strong class="hl">LystSync</strong> é um aplicativo Android desenvolvido pela <strong class="hl">ExodusTec</strong> para ajudar freelancers brasileiros a gerenciar clientes, cobranças e vencimentos de forma simples e segura.</p>
+    <p>Esta Política de Privacidade descreve quais dados coletamos, como os utilizamos, com quem compartilhamos e quais são seus direitos como usuário. Ao utilizar o LystSync, você concorda com as práticas descritas neste documento.</p>
+    <div class="hbox"><p>Os dados dos seus clientes são armazenados <strong class="hl">localmente no seu dispositivo</strong> e nunca são enviados para nossos servidores. O backup em nuvem é opcional, criptografado com AES-256 e armazenado exclusivamente na sua conta Google Drive pessoal.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">02</span><span class="stitle">Dados coletados</span></div>
+    <p>O LystSync coleta as seguintes categorias de dados:</p>
+    <div class="dgrid">
+      <div class="dcard">
+        <div class="dclabel">Conta Google</div>
+        <div class="dctitle">Dados de autenticação</div>
+        <div class="dcdesc">Nome, endereço de e-mail e foto de perfil obtidos via Google Sign-In para identificar sua conta.</div>
+        <span class="dctag tthird">Via Google</span>
+      </div>
+      <div class="dcard">
+        <div class="dclabel">Dados do app</div>
+        <div class="dctitle">Clientes e cobranças</div>
+        <div class="dcdesc">Nome, telefone, tipo, valores e datas de vencimento dos seus clientes. Armazenados apenas no seu dispositivo.</div>
+        <span class="dctag tlocal">Somente local</span>
+      </div>
+      <div class="dcard">
+        <div class="dclabel">Atividade</div>
+        <div class="dctitle">Logs internos</div>
+        <div class="dcdesc">Registro de ações como criação, edição, pagamento e finalização de clientes. Armazenados apenas no dispositivo.</div>
+        <span class="dctag tlocal">Somente local</span>
+      </div>
+      <div class="dcard">
+        <div class="dclabel">Assinaturas</div>
+        <div class="dctitle">Histórico de compras</div>
+        <div class="dcdesc">Informações sobre assinaturas ativas (plano, validade) processadas via Google Play Billing.</div>
+        <span class="dctag tthird">Via Google Play</span>
+      </div>
+      <div class="dcard">
+        <div class="dclabel">Publicidade</div>
+        <div class="dctitle">ID de publicidade</div>
+        <div class="dcdesc">Identificador de publicidade do dispositivo usado pelo Google AdMob para exibir anúncios no plano gratuito.</div>
+        <span class="dctag tthird">Via AdMob</span>
+      </div>
+      <div class="dcard">
+        <div class="dclabel">Diagnóstico</div>
+        <div class="dctitle">Relatórios de falhas</div>
+        <div class="dcdesc">Dados técnicos de erros coletados automaticamente pelo Firebase para melhorar a estabilidade do app.</div>
+        <span class="dctag tthird">Via Firebase</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">03</span><span class="stitle">Como usamos os dados</span></div>
+    <p>Utilizamos os dados coletados exclusivamente para:</p>
+    <ul class="plist">
+      <li>Identificar sua conta e personalizar sua experiência no app</li>
+      <li>Armazenar e gerenciar seus clientes, cobranças e vencimentos</li>
+      <li>Enviar notificações de vencimento no horário configurado por você</li>
+      <li>Realizar e restaurar backups seguros na sua conta Google Drive</li>
+      <li>Processar e validar assinaturas dos planos pagos</li>
+      <li>Exibir anúncios relevantes para usuários do plano gratuito</li>
+      <li>Identificar e corrigir erros técnicos do aplicativo</li>
+    </ul>
+    <p>Não utilizamos seus dados para fins de marketing, não os vendemos e não os compartilhamos com terceiros além dos serviços descritos nesta política.</p>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">04</span><span class="stitle">Compartilhamento com terceiros</span></div>
+    <p>Os dados são compartilhados apenas com os seguintes serviços do Google, estritamente necessários para o funcionamento do app:</p>
+    <table class="ptable">
+      <tr><th>Serviço</th><th>Dados compartilhados</th><th>Finalidade</th><th>Criptografado</th></tr>
+      <tr><td><strong class="hl">Google Sign-In</strong></td><td>Nome, e-mail, foto</td><td>Autenticação</td><td><span class="pill pyes">Sim</span></td></tr>
+      <tr><td><strong class="hl">Google Drive</strong></td><td>Banco de dados (AES-256)</td><td>Backup opcional</td><td><span class="pill pyes">Sim</span></td></tr>
+      <tr><td><strong class="hl">Google Play Billing</strong></td><td>Token de compra, plano ativo</td><td>Assinaturas</td><td><span class="pill pyes">Sim</span></td></tr>
+      <tr><td><strong class="hl">Google AdMob</strong></td><td>ID de publicidade</td><td>Anúncios (gratuito)</td><td><span class="pill pyes">Sim</span></td></tr>
+      <tr><td><strong class="hl">Firebase Crashlytics</strong></td><td>Dados técnicos de falhas</td><td>Diagnóstico</td><td><span class="pill pyes">Sim</span></td></tr>
+      <tr><td><strong class="hl">Nossos servidores</strong></td><td>Nenhum</td><td>—</td><td><span class="pill pno">N/A</span></td></tr>
+    </table>
+    <p>A ExodusTec não possui servidores próprios. Todos os dados em nuvem são armazenados diretamente nos serviços Google sob a política de privacidade do próprio Google.</p>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">05</span><span class="stitle">Segurança dos dados</span></div>
+    <ul class="plist">
+      <li>Dados de clientes armazenados localmente no dispositivo, sem transmissão para servidores externos</li>
+      <li>Backup criptografado com <strong class="hl">AES-256-CBC</strong> antes de ser enviado ao Google Drive</li>
+      <li>Chave de criptografia derivada do seu Google User ID via <strong class="hl">PBKDF2</strong> — nenhum outro usuário pode acessar seu backup</li>
+      <li>Arquivo de backup na pasta privada do app no Drive (AppData), invisível para outros apps</li>
+      <li>Toda comunicação com serviços externos usa <strong class="hl">HTTPS/TLS</strong></li>
+      <li>Acesso ao app protegido com biometria ou PIN do dispositivo</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">06</span><span class="stitle">Seus direitos (LGPD)</span></div>
+    <p>De acordo com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), você tem os seguintes direitos:</p>
+    <ul class="plist">
+      <li><strong class="hl">Acesso:</strong> visualizar todos os dados armazenados diretamente no app</li>
+      <li><strong class="hl">Correção:</strong> editar qualquer dado de cliente ou configuração a qualquer momento</li>
+      <li><strong class="hl">Exclusão:</strong> deletar clientes, dados e backup dentro do app ou por solicitação formal</li>
+      <li><strong class="hl">Portabilidade:</strong> seus dados ficam no seu dispositivo e no seu Google Drive</li>
+      <li><strong class="hl">Revogação:</strong> desconectar a conta Google a qualquer momento pelas configurações do app</li>
+      <li><strong class="hl">Oposição:</strong> usuários do plano pago não recebem anúncios do AdMob</li>
+    </ul>
+    <p>Para exercer qualquer um desses direitos, entre em contato pelo e-mail <a href="mailto:suportexoduss333@gmail.com" style="color:var(--accent)">suportexoduss333@gmail.com</a>.</p>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">07</span><span class="stitle">Retenção de dados</span></div>
+    <table class="ptable">
+      <tr><th>Dado</th><th>Onde fica</th><th>Até quando</th></tr>
+      <tr><td>Clientes e vencimentos</td><td>Dispositivo</td><td>Até você deletar ou desinstalar o app</td></tr>
+      <tr><td>Backup criptografado</td><td>Google Drive</td><td>Até você deletar ou solicitar exclusão</td></tr>
+      <tr><td>Dados de conta Google</td><td>Google</td><td>Gerenciado pela política do Google</td></tr>
+      <tr><td>Histórico de compras</td><td>Google Play</td><td>Gerenciado pela política do Google Play</td></tr>
+      <tr><td>Dados de falhas</td><td>Firebase</td><td>90 dias (política do Firebase Crashlytics)</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">08</span><span class="stitle">Menores de idade</span></div>
+    <p>O LystSync é destinado exclusivamente a profissionais adultos. Não coletamos intencionalmente dados de menores de 18 anos. Se identificar que um menor forneceu dados sem consentimento, entre em contato para remoção imediata.</p>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">09</span><span class="stitle">Alterações nesta política</span></div>
+    <p>Esta política pode ser atualizada periodicamente. A data de vigência no topo do documento será atualizada a cada alteração. O uso continuado do LystSync após alterações implica aceitação da nova versão.</p>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="snum">10</span><span class="stitle">Contato e suporte</span></div>
+    <p>Para dúvidas, solicitações ou exercício de direitos relacionados à privacidade dos seus dados:</p>
+    <div class="ccard">
+      <div class="crow"><div class="cicon">⚡</div><div><div class="cilabel">Desenvolvedor</div><div class="cival">ExodusTec</div></div></div>
+      <div class="crow"><div class="cicon">✉</div><div><div class="cilabel">E-mail de suporte</div><div class="cival"><a href="mailto:suportexoduss333@gmail.com">suportexoduss333@gmail.com</a></div></div></div>
+      <div class="crow"><div class="cicon">⏱</div><div><div class="cilabel">Prazo de resposta</div><div class="cival">Até 7 dias úteis</div></div></div>
+      <div class="crow"><div class="cicon">📱</div><div><div class="cilabel">Aplicativo</div><div class="cival">LystSync 2.0 — Android (com.exoduss.lystsync)</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fi">
+    <span class="fcopy">© 2025 ExodusTec · Todos os direitos reservados</span>
+    <div class="flinks">
+      <a href="exclusao-dados.html">Excluir dados</a>
+      <a href="mailto:suportexoduss333@gmail.com">Suporte</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
