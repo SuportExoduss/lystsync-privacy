@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LystSync — Exclusão de Dados</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: #0D0F14; color: #F0F4F8; line-height: 1.7; }
+  .container { max-width: 680px; margin: 0 auto; padding: 48px 24px; }
+  .logo { font-size: 28px; font-weight: 600; color: #00BCD4; margin-bottom: 8px; }
+  .dev { font-size: 13px; color: #7A8FA6; margin-bottom: 40px; }
+  h1 { font-size: 22px; font-weight: 500; color: #F0F4F8; margin-bottom: 12px; }
+  h2 { font-size: 16px; font-weight: 500; color: #00BCD4; margin: 32px 0 10px; }
+  p { font-size: 15px; color: #B0BEC5; margin-bottom: 12px; }
+  .step { background: #161B24; border: 1px solid #1A2535;
+          border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+  .step-num { font-size: 12px; font-weight: 600; color: #00BCD4;
+              text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .step-title { font-size: 15px; font-weight: 500; color: #F0F4F8; margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: #7A8FA6; }
+  .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .data-table th { text-align: left; font-size: 12px; font-weight: 500;
+                   color: #7A8FA6; padding: 8px 12px;
+                   border-bottom: 1px solid #1A2535; }
+  .data-table td { font-size: 13px; color: #B0BEC5; padding: 10px 12px;
+                   border-bottom: 1px solid #161B24; }
+  .tag-del { background: #1B3A2A; color: #27AE60; font-size: 11px;
+             padding: 2px 8px; border-radius: 99px; }
+  .tag-keep { background: #2A1B1B; color: #C0392B; font-size: 11px;
+              padding: 2px 8px; border-radius: 99px; }
+  .contact-box { background: #161B24; border: 1px solid #00BCD4;
+                 border-radius: 12px; padding: 20px; margin-top: 32px; }
+  .contact-box a { color: #00BCD4; text-decoration: none; }
+  .contact-box a:hover { text-decoration: underline; }
+  .footer { font-size: 12px; color: #3D5466; margin-top: 48px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="logo">⚡ LystSync</div>
+  <div class="dev">Desenvolvido por ExodusTec</div>
+
+  <h1>Solicitação de Exclusão de Dados</h1>
+  <p>
+    Esta página descreve como solicitar a exclusão da sua conta e de todos
+    os dados associados ao aplicativo <strong>LystSync</strong>.
+  </p>
+
+  <h2>Como solicitar a exclusão</h2>
+
+  <div class="step">
+    <div class="step-num">Opção 1 — Dentro do app</div>
+    <div class="step-title">Excluir dados diretamente no LystSync</div>
+    <div class="step-desc">
+      Abra o LystSync → Menu lateral (☰) → Perfil →
+      selecione "Trocar de conta Google" para desconectar sua conta.<br><br>
+      Para apagar todos os clientes e dados locais: acesse cada cliente
+      e utilize o botão "Deletar". Os dados são removidos imediatamente
+      do dispositivo e o backup na nuvem será excluído no próximo ciclo.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">Opção 2 — Por e-mail</div>
+    <div class="step-title">Enviar solicitação formal de exclusão</div>
+    <div class="step-desc">
+      Envie um e-mail para
+      <strong>exodustec@gmail.com</strong> com o assunto:<br>
+      <em>"Exclusão de dados — LystSync"</em><br><br>
+      Inclua o e-mail da conta Google utilizada no app.
+      Processaremos sua solicitação em até <strong>7 dias úteis</strong>.
+    </div>
+  </div>
+
+  <h2>O que é excluído e o que é mantido</h2>
+
+  <table class="data-table">
+    <tr>
+      <th>Tipo de dado</th>
+      <th>Onde está</th>
+      <th>Ao solicitar exclusão</th>
+    </tr>
+    <tr>
+      <td>Clientes e vencimentos</td>
+      <td>Dispositivo (SQLite)</td>
+      <td><span class="tag-del">Excluído</span></td>
+    </tr>
+    <tr>
+      <td>Backup criptografado</td>
+      <td>Google Drive (AppData)</td>
+      <td><span class="tag-del">Excluído</span></td>
+    </tr>
+    <tr>
+      <td>Logs de atividade</td>
+      <td>Dispositivo (SQLite)</td>
+      <td><span class="tag-del">Excluído</span></td>
+    </tr>
+    <tr>
+      <td>Nome e e-mail (Google)</td>
+      <td>Google Account</td>
+      <td><span class="tag-keep">Gerenciado pelo Google</span></td>
+    </tr>
+    <tr>
+      <td>Histórico de compras</td>
+      <td>Google Play</td>
+      <td><span class="tag-keep">Gerenciado pelo Google</span></td>
+    </tr>
+    <tr>
+      <td>Dados de anúncios</td>
+      <td>Google AdMob</td>
+      <td><span class="tag-keep">Gerenciado pelo Google</span></td>
+    </tr>
+  </table>
+
+  <p>
+    Dados gerenciados pelo Google (conta, compras, anúncios) podem ser
+    excluídos diretamente nas configurações da sua conta Google em
+    <a href="https://myaccount.google.com" style="color:#00BCD4">
+    myaccount.google.com</a>.
+  </p>
+
+  <div class="contact-box">
+    <div class="step-num">Contato</div>
+    <div class="step-title" style="margin-bottom:8px">ExodusTec — Suporte LystSync</div>
+    <p style="margin:0; font-size:13px; color:#7A8FA6">
+      E-mail: <a href="mailto:exodustec@gmail.com">exodustec@gmail.com</a><br>
+      Prazo de resposta: até 7 dias úteis<br>
+      Versão do app: LystSync 2.0
+    </p>
+  </div>
+
+  <div class="footer">
+    © 2025 ExodusTec · LystSync · Todos os direitos reservados
+  </div>
+
+</div>
+</body>
+</html>
